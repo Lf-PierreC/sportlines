@@ -3,772 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="./images/logo-3.png">
     <title>Sportlines</title>
-    <style>
-        /* Paleta de Cores e Tipografia baseada na imagem */
-        :root {
-            --verde-escuro: #015c53; /* Cor do fundo e detalhes escuros */
-            --verde-medio: #2f9e93;
-            --verde-limao: #6fe702; /* Cor da folha/acento */
-            --branco: #ffffff;
-            --cinza-claro: #f4f4f4;
-            --texto-escuro: #333333;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;            
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--cinza-claro);
-            color: var(--texto-escuro);
-            line-height: 1.6;
-        }
-
-        /* Botões */
-        .btn {
-            display: inline-block;
-            background-color: var(--verde-medio);
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 25px;
-            text-transform: uppercase;
-            transition: background 0.3s ease;
-        }
-        .btn:hover {
-            background-color: var(--verde-escuro);
-            color: var(--branco);
-        }
-
-        /* Cabeçalho */
-        header {
-            background-color: var(--branco);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .logo img {
-            height: 50px; /* [LINK DA IMAGEM AQUI - Logo Sportlines] */
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        nav a {
-            text-decoration: none;
-            color: var(--verde-escuro);
-            font-weight: bold;
-            font-size: 16px;
-        }
-        nav a:hover {
-            color: var(--verde-medio);
-        }
-
-        /* Seção Hero */
-        .hero {
-            background-color: white;
-            color: var(--branco);
-            padding: 100px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-            height: 80vh;
-        }
-
-        /* Posicionamento do detalhe gráfico no canto */
-        .hero-detalhe-canto {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 900px; /* Ajuste o tamanho conforme preferir */
-            pointer-events: none; /* Garante que o mouse interaja direto com os botões/textos */
-            z-index: 1;
-        }
-
-        /* Efeito de onda no fundo inspirado no design */
-        
-        .hero-text {
-            max-width: 40%;
-            z-index: 2;
-            margin-left: 10%; /* Empurra o bloco de texto para a direita */
-            position: relative; 
-        }
-        .hero-text h1 {
-            font-size: 2.7rem;
-            margin-bottom: 20px;
-            font-style: italic;
-            color: var(--verde-escuro);
-        }
-        .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--texto-escuro);
-        }
-        /* O container agora ocupa 100% da seção */
-        .hero-image {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 60%;
-            height: 100%;
-            z-index: 1; /* Fica atrás do texto */
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Garante que a foto preencha tudo sem amassar */
-            border-radius: 0; /* Removido para colar nas bordas da tela */
-            
-            
-            /* Máscara de degradê lateral: 0% visível na esquerda (onde fica o texto) até 100% visível na direita */
-            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 10%, rgba(0,0,0,1) 60%);
-            mask-image: linear-gradient(to right, rgba(0,0,0,0) 10%, rgba(0,0,0,1) 60%);
-
-        }
-
-
-        /* Seção Sobre o Produto */
-        .produto {
-            padding: 80px 5%;
-            background-color: var(--verde-escuro);
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        .produto-img {
-            flex: 1;
-        }
-        .produto-img img {
-            width: 100%;
-            border-radius: 15%;
-            /* [LINK DA IMAGEM AQUI - Detalhe da Máquina] */
-        }
-        .produto-info {
-            flex: 1;
-        }
-        .produto-info h2 {
-            color: white;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-
-        .produto-info p {
-            color: white;
-        }
-
-        /* Seção Características Refatorada */
-        .caracteristicas {
-            padding: 100px 5%;
-            background: linear-gradient(135deg, var(--cinza-claro) 0%, #e9ecef 100%);
-        }
-
-        .caracteristicas h2 {
-            text-align: center;
-            color: var(--verde-escuro);
-            margin-bottom: 60px;
-            font-size: 2.5rem;
-            position: relative;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Linha decorativa abaixo do título */
-        .caracteristicas h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--verde-limao);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        .grid-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        /* Novo visual do card */
-        .feature-card {
-            background: var(--branco);
-            padding: 25px 20px;
-            border-radius: 2em;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-            border-bottom: 4px solid var(--verde-limao);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.3s ease; /* Animação suave */
-            cursor: default;
-        }
-
-        /* Efeito de interatividade (Dinâmico) ao passar o mouse */
-        .feature-card:hover {
-            transform: translateY(-8px); /* Card sobe levemente */
-            box-shadow: 0 15px 40px rgba(1, 92, 77, 0.15); /* Sombra na cor verde-escuro */
-            border-color: var(--verde-escuro); /* A base muda para verde escuro */
-        }
-
-        /* Ícone redondo */
-        .feature-icon {
-            flex-shrink: 0;
-            width: 45px;
-            height: 45px;
-            background-color: rgba(105, 217, 0, 0.15); /* Fundo verde-limão transparente */
-            color: var(--verde-escuro);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
-        }
-        
-        .feature-icon svg {
-            width: 22px;
-            height: 22px;
-        }
-
-        /* Muda a cor do ícone no hover do card */
-        .feature-card:hover .feature-icon {
-            background-color: var(--verde-limao);
-            color: var(--branco);
-        }
-
-        .feature-card p {
-            margin: 0;
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: var(--texto-escuro);
-            line-height: 1.4;
-        }
-
-        /* Catálogo e Parceiros (Base) */
-        .catalogo, .parceiros {
-            padding: 80px 5%;
-            background-color: var(--branco);
-            text-align: center;
-        }
-        .catalogo h2, .parceiros h2 {
-            color: var(--verde-escuro);
-            margin-bottom: 50px;
-            font-size: 2.2rem;
-            text-transform: uppercase;
-        }
-
-        /* Nova Grid Responsiva do Catálogo */
-        .grid-catalogo {
-            display: grid;
-            /* O auto-fit cria colunas automáticas baseadas no tamanho da tela */
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            text-align: left; /* Alinha o texto do produto à esquerda */
-        }
-
-        /* Estilo do Card de Produto (E-commerce) */
-        .catalogo-card {
-            background-color: var(--branco);
-            border-radius: 2em;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border: 1px solid #eaeaea;
-            overflow: hidden; /* Mantém a imagem dentro do raio da borda */
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* Efeito ao passar o mouse no Card */
-        .catalogo-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-        }
-
-        /* Imagem do Produto */
-        .catalogo-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover; /* Corta a imagem perfeitamente sem achatar */
-            border-bottom: 4px solid var(--verde-limao);
-        }
-
-        /* Área de Texto do Produto */
-        .catalogo-info {
-            padding: 25px 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1; /* Preenche o espaço para empurrar o botão para o fundo */
-        }
-
-        .catalogo-info h3 {
-            color: var(--verde-escuro);
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .catalogo-info p {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 25px;
-            flex-grow: 1; /* Garante que os botões fiquem alinhados caso os textos tenham tamanhos diferentes */
-        }
-
-        /* Botão do Produto */
-        .btn-comprar {
-            display: block;
-            text-align: center;
-            background-color: var(--verde-escuro);
-            color: var(--branco);
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .btn-comprar:hover {
-            background-color: var(--verde-limao);
-            color: var(--verde-escuro);
-        }
-        .parceiros-logos img {
-            max-width: 150px;
-            margin: 0 20px;
-            /* [LINK DA IMAGEM AQUI - Logo Leba Tenis na Grama] */
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: var(--verde-escuro);
-            color: var(--branco);
-            padding: 40px 5%;
-            text-align: center;
-        }
-        footer img {
-            height: 60px;
-            margin-bottom: 20px;
-            /* [LINK DA IMAGEM AQUI - Logo Branca Sportlines] */
-        }
-        .contato-info p {
-            margin: 10px 0;
-            font-size: 1.1rem;
-        }
-
-        /* Estilos da Janela Modal */
-        .modal {
-            display: none; /* Escondido por padrão */
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro transparente */
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background-color: var(--branco);
-            padding: 30px;
-            border-radius: 2em;
-            max-width: 600px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            animation: deslizarModal 0.3s ease-out;
-        }
-
-        @keyframes deslizarModal {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .fechar-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 30px;
-            font-weight: bold;
-            color: var(--verde-escuro);
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .fechar-modal:hover {
-            color: var(--verde-limao);
-        }
-
-        .modal-img {
-            width: 100%;
-            max-height: 350px;
-            object-fit: contain;
-            margin-bottom: 20px;
-            border-radius: 2em;
-        }
-
-        /* Estilos da Galeria de Miniaturas no Modal */
-        .galeria-miniaturas {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .galeria-miniaturas img {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            border-radius: 8px;
-            cursor: pointer;
-            border: 3px solid transparent;
-            opacity: 0.6;
-            transition: all 0.3s ease;
-        }
-
-        .galeria-miniaturas img:hover,
-        .galeria-miniaturas img.ativa {
-            opacity: 1;
-            border-color: var(--verde-limao);
-            transform: scale(1.05);
-        }
-
-
-        /* Configurações do Botão Hambúrguer (Desktop) */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--verde-escuro);
-            cursor: pointer;
-        }
-        .menu-toggle svg {
-            width: 35px;
-            height: 35px;
-        }
-        .btn-mobile-only {
-            display: none; /* Esconde o botão duplicado no PC */
-        }   
-
-        /* ========================================= */
-        /* RESPONSIVIDADE - CELULARES E TABLETS      */
-        /* ========================================= */
-        @media (max-width: 768px) {
-            /* 1. Ajustes no Cabeçalho (Mobile com Hambúrguer) */
-            header {
-                flex-wrap: wrap; /* Permite que o menu desça para a linha de baixo */
-                padding: 0px 5%;
-            }
-            .btn-desktop-only {
-                display: none!important;; /* Esconde o botão gigante do cabeçalho no celular */
-            }
-            .menu-toggle {
-                display: block; /* Mostra o ícone do hambúrguer */
-            }
-            
-            /* Estado inicial do menu no celular (Escondido) */
-            nav {
-                width: 100%;
-                display: none;
-            }
-            
-            /* Classe que o JavaScript vai adicionar para abrir o menu */
-            nav.menu-aberto {
-                display: block;
-                animation: deslizarMenu 0.3s ease;
-            }
-
-            @keyframes deslizarMenu {
-                from { opacity: 0; transform: translateY(-10px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-
-            nav ul {
-                flex-direction: column;
-                background-color: var(--branco);
-                text-align: center;
-                padding: 20px 0;
-                margin-top: 15px;
-                border-radius: 8px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-                gap: 25px;
-            }
-            
-            .btn-mobile-only {
-                display: block;
-                margin-top: 10px;
-            }
-
-            .btn {
-                display: inline-block;
-                background-color: var(--verde-medio);
-                color: white;
-                padding: 8px 18px;
-                text-decoration: none;
-                font-weight: bold;
-                border-radius: 25px;
-                text-transform: uppercase;
-                transition: background 0.3s ease;
-                font-size: .85em;
-            }
-
-            /* 2. Ajustes na Seção Hero (Início) */
-            .hero {
-                padding: 50% 5%; /* Mais espaço no topo */
-                padding-bottom: 2%;
-                min-height: 70vh; /* Garante altura suficiente */
-                align-items: flex-start;
-            }
-            .hero-detalhe-canto {
-                width: 100%; /* Adapta a arte do canto para a tela do celular */
-            }
-            .hero-text {
-                max-width: 100%;
-                margin-left: 0;
-                text-align: center;
-                z-index: 3;
-            }
-            .hero-text h1 {
-                font-size: 1.5rem; /* Fonte um pouco menor */
-                line-height: 1.2;
-            }
-            
-            .hero-text p {
-                font-size: .8rem; /* Fonte um pouco menor */
-            }
-
-            /* Reposiciona a imagem principal para o rodapé da área de Início */
-            .hero-image {
-                width: 100%;
-                height: 40%;
-                top: auto;
-                bottom: 0;
-            }
-            .hero-image img {
-                /* Muda o degradê para: transparente em cima, nítido embaixo */
-                -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 60%);
-                mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 60%);
-            }
-
-            /* Película de Degradê por cima da foto (Apenas Mobile) */
-            .hero-image::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 2; /* Garante que fique por cima da tag img */
-                pointer-events: none; /* Garante que não bloqueie os cliques na tela */
-                
-                /* Opção B (Se preferir escurecer a base com o verde escuro): */
-                background: linear-gradient(to top, rgba(1, 92, 83, 1) 0%, rgba(1, 92, 83, 0) 40%); 
-            }
-
-            .grid-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        /* Novo visual do card */
-        .feature-card {
-            background: var(--branco);
-            padding: 15px 20px;
-            border-radius: 2em;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-            border-bottom: 4px solid var(--verde-limao);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.3s ease; /* Animação suave */
-            cursor: default;
-        }
-
-        /* Efeito de interatividade (Dinâmico) ao passar o mouse */
-        .feature-card:hover {
-            transform: translateY(-8px); /* Card sobe levemente */
-            box-shadow: 0 15px 40px rgba(1, 92, 77, 0.15); /* Sombra na cor verde-escuro */
-            border-color: var(--verde-escuro); /* A base muda para verde escuro */
-        }
-
-        /* Ícone redondo */
-        .feature-icon {
-            flex-shrink: 0;
-            width: 45px;
-            height: 45px;
-            background-color: rgba(105, 217, 0, 0.15); /* Fundo verde-limão transparente */
-            color: var(--verde-escuro);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
-        }
-        
-        .feature-icon svg {
-            width: 22px;
-            height: 22px;
-        }
-
-        /* Muda a cor do ícone no hover do card */
-        .feature-card:hover .feature-icon {
-            background-color: var(--verde-limao);
-            color: var(--branco);
-        }
-
-        .feature-card p {
-            margin: 0;
-            font-size: .8em;
-            font-weight: 500;
-            color: var(--texto-escuro);
-            line-height: 1.4;
-        }
-
-            /* 3. Ajustes na Seção A Máquina */
-            .produto {
-                flex-direction: column; /* Coloca a foto em cima e o texto embaixo */
-                text-align: center;
-                gap: 30px;
-                padding: 60px 5%;
-            }
-
-            .produto-info h2 {
-                font-size: 1.5em;
-            }
-
-            .produto-info p {
-                font-size: .8em;
-                text-align: justify;
-            }
-            
-
-            /* 4. Ajustes de Espaçamento Geral */
-            .caracteristicas, .catalogo, .parceiros {
-                padding: 60px 5%; /* Reduz aquele respiro gigante de 100px do PC */
-            }
-            
-            .caracteristicas h2, .catalogo h2 {
-                font-size: 1.3rem;
-                margin-bottom: 30px;
-            }
-
-            .parceiros h2 {
-                font-size: 1.1em;
-            }
-
-            .parceiros-logos img {
-                max-width: 130px;
-                margin: 0 20px;
-                /* [LINK DA IMAGEM AQUI - Logo Leba Tenis na Grama] */
-            }
-
-            /* Estilo do Card de Produto (E-commerce) */
-            .catalogo-card {
-                background-color: var(--branco);
-                border-radius: 2em;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-                border: 1px solid #eaeaea;
-                overflow: hidden; /* Mantém a imagem dentro do raio da borda */
-                display: flex;
-                flex-direction: column;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            /* Efeito ao passar o mouse no Card */
-            .catalogo-card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-            }
-
-            /* Imagem do Produto */
-            .catalogo-card img {
-                width: 100%;
-                height: 220px;
-                object-fit: cover; /* Corta a imagem perfeitamente sem achatar */
-                border-bottom: 4px solid var(--verde-limao);
-            }
-
-            /* Área de Texto do Produto */
-            .catalogo-info {
-                padding: 25px 20px;
-                display: flex;
-                flex-direction: column;
-                flex-grow: 1; /* Preenche o espaço para empurrar o botão para o fundo */
-            }
-
-            .catalogo-info h3 {
-                color: var(--verde-escuro);
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-            }
-
-            .catalogo-info p {
-                color: #555;
-                font-size: 0.95rem;
-                line-height: 1.5;
-                margin-bottom: 25px;
-                flex-grow: 1; /* Garante que os botões fiquem alinhados caso os textos tenham tamanhos diferentes */
-            }
-
-
-            /* Rodapé */
-            footer {
-                background-color: var(--verde-escuro);
-                color: var(--branco);
-                padding: 40px 5%;
-                text-align: center;
-            }
-
-            footer p {
-                font-size: .7em;
-            }
-
-            .contato-info p {
-                margin: 10px 0;
-                font-size: 1rem;
-                line-height: 1;
-            }
-
-            /* 5. Ajustes do Modal (Janela de Produtos) */
-            .modal-content {
-                padding: 20px;
-                padding-top: 50px;
-                width: 95%; /* Ocupa quase a tela toda no celular */
-            }
-            .modal-img {
-                max-height: 250px; /* Reduz a altura da foto no clique */
-            }
-            .fechar-modal {
-                top: 10px;
-                right: 15px;
-            }
-
-            
-        }
-    </style>
 </head>
 <body>
 
@@ -790,12 +27,12 @@
                 <li><a href="#artigos" onclick="toggleMenu()">Artigos Esportivos</a></li>
                 <li><a href="#parceiros" onclick="toggleMenu()">Parceiros</a></li>
                 <!-- Botão do WhatsApp que aparecerá apenas dentro do menu no celular -->
-                <li class="btn-mobile-only"><a href="https://wa.me/5511988067964" class="btn">Fale no WhatsApp</a></li>
+                <li class="btn-mobile-only"><a href="https://wa.me/5511988067964" class="btn">Clique e Conheça</a></li>
             </ul>
         </nav>
         
         <!-- Botão do WhatsApp do PC -->
-        <a href="https://wa.me/5511988067964" class="btn btn-desktop-only">Fale no WhatsApp</a>
+        <a href="https://wa.me/5511988067964" class="btn btn-desktop-only">Clique e Conheça</a>
     </header>
 
     <section id="inicio" class="hero">
@@ -803,9 +40,9 @@
         <img src="images/canto-1.png" alt="Detalhe decorativo" class="hero-detalhe-canto">
 
         <div class="hero-text">
-            <h1>Precisão e Praticidade para o seu Campo</h1>
-            <p>O Marcador de Campo Elétrico Sportlines produz uma linha consistente e de alta qualidade.</p>
-            <a href="#maquina" class="btn">Conheça o Marcador</a>
+            <h1>Mais precisão e menos gasto com tinta</h1>
+            <p>Com sistema Plug & Spray e bateria de longa duração, o Marcador Elétrico Sportlines garante marcação profissional em minutos e com baixo consumo de insumos.</p>
+            <a href="#maquina" class="btn">Ver Vantagens e Preço</a>
         </div>
         <div class="hero-image">
             <img src="images/maquina-1.png" alt="Marcador de Linhas em Ação">
@@ -814,7 +51,11 @@
 
     <section id="maquina" class="produto">
         <div class="produto-img">
-            <img src="./images/maquina-1.png" alt="Marcador de Linhas Sportlines" style="cursor: pointer;" onclick="abrirModal('Marcador de Linhas Sportlines', './images/maquina-1.png', 'O Marcador de Linhas Sportlines é uma solução para marcação das linhas de jogo nos Campos de Futebol, Rugby, Tênis e diversas outras modalidades. Esta opção apresenta um sistema plug and spray para conexão rápida e fácil de tintas.')">
+            <img src="./images/maquina-4.jpg" alt="Marcador de Linhas Sportlines" style="cursor: pointer;" onclick="abrirModalGaleria('Marcador de Linhas', ['./images/maquina-4.jpg', './images/maquina-5.jpg', './images/maquina-2.jpg','./images/maquina-3.jpg'], 'O Marcador de Linhas Sportlines produz uma linha consistente e de alta qualidade.')">
+            <!-- Botão posicionado por cima da foto -->
+            <button class="btn-sobre-imagem" onclick="abrirModalGaleria('Marcador de Linhas', ['./images/maquina-4.jpg', './images/maquina-5.jpg', './images/maquina-2.jpg','./images/maquina-3.jpg'], 'O Marcador de Linhas Sportlines produz uma linha consistente e de alta qualidade.')">
+                Saiba Mais
+            </button>
         </div>
         <div class="produto-info">
             <h2>Marcador Elétrico</h2>
@@ -893,19 +134,19 @@
             
             <!-- Produto 1 -->
             <div class="catalogo-card">
-                <img src="./images/maquina-1.png" alt="Marcador Sportlines" style="cursor: pointer;" onclick="abrirModalGaleria('Marcador de Linhas', ['./images/maquina-1.png', './images/tenis-leba.jpg'], 'O Marcador de Linhas Sportlines produz uma linha consistente e de alta qualidade.')">
+                <img id="marcador" src="./images/maquina-1.png" alt="Marcador Sportlines" style="cursor: pointer;" onclick="abrirModalGaleria('Marcador de Linhas', ['./images/maquina-4.jpg', './images/maquina-5.jpg', './images/maquina-2.jpg','./images/maquina-3.jpg'], 'O Marcador de Linhas Sportlines produz uma linha consistente e de alta qualidade.')">
                 <div class="catalogo-info">
-                    <h3>Tinta Branca Concentrada</h3>
-                    <p>Tinta especial para marcação de gramados. Alto rendimento e fixação prolongada, ideal para o Marcador Sportlines.</p>
+                    <h3>Marcador de Campo Elétrico</h3>
+                    <p>Nosso marcador produz uma linha consistente e de alta qualidade pelo melhor preço do mercado.</p>
                     <a href="https://wa.me/5511988067964" class="btn-comprar">Solicitar Orçamento</a>
                 </div>
             </div>
 
             <!-- Produto 2 -->
             <div class="catalogo-card">
-                <img src="[LINK DA IMAGEM AQUI - PRODUTO 2]" alt="Rede de Gol">
+                <img src="./images/rede-campo1.png" alt="Rede de Gol" style="cursor: pointer;" onclick="abrirModalGaleria('Marcador de Linhas', ['./images/rede-campo1.png', './images/rede-campo3.jpeg', './images/rede-campo4.jpeg','./images/rede-campo2.jpeg'], 'O Marcador de Linhas Sportlines produz uma linha consistente e de alta qualidade.')">
                 <div class="catalogo-info">
-                    <h3>Rede de Gol Profissional</h3>
+                    <h3>Rede de Campo</h3>
                     <p>Rede com fio de alta densidade e proteção UV. Resistente a impactos e variações climáticas. Padrão oficial.</p>
                     <a href="https://wa.me/5511988067964" class="btn-comprar">Solicitar Orçamento</a>
                 </div>
@@ -913,10 +154,19 @@
 
             <!-- Produto 3 -->
             <div class="catalogo-card">
-                <img src="[LINK DA IMAGEM AQUI - PRODUTO 3]" alt="Bandeiras de Escanteio">
+                <img src="./images/spreader.png" alt="Spreader Sportlines" style="cursor: pointer;" onclick="abrirModalGaleria('Spreader Profissional', ['./images/spreader.png'], 'O Spreader Sportlines é a ferramenta ideal para a manutenção e o cuidado de gramados esportivos, desenvolvido para a distribuição uniforme de fertilizantes, sementes e areia.')">
                 <div class="catalogo-info">
-                    <h3>Kit Bandeiras de Escanteio</h3>
-                    <p>Jogo completo com 4 hastes flexíveis e bandeiras em tecido náilon resistente. Sistema de mola na base.</p>
+                    <h3>Spreader Profissional</h3>
+                    <p>Distribuidor de alta precisão para fertilizantes, sementes e areia. Garante cobertura uniforme e preservação do gramado.</p>
+                    <a href="https://wa.me/5511988067964" class="btn-comprar">Solicitar Orçamento</a>
+                </div>
+            </div>
+
+            <div class="catalogo-card">
+                <img src="./images/tira-plug.png" alt="Tira Plug Sportlines" style="cursor: pointer;" onclick="abrirModalGaleria('Tira Plug Profissional', ['./images/tira-plug.png'], 'O Tira Plug Sportlines é a ferramenta manual indispensável para a manutenção corretiva e reparo rápido de gramados esportivos, permitindo a substituição limpa e precisa de torrões e plugues de grama.')">
+                <div class="catalogo-info">
+                    <h3>Tira Plug Profissional</h3>
+                    <p>Ferramenta manual de alta resistência para remoção e substituição precisa de plugues de grama em reparos rápidos do campo.</p>
                     <a href="https://wa.me/5511988067964" class="btn-comprar">Solicitar Orçamento</a>
                 </div>
             </div>
@@ -928,6 +178,7 @@
         <h2>Quem Confia na Sportlines</h2>
         <div class="parceiros-logos">
             <img src="images/tenis-leba.jpg" alt="Leba Tenis na Grama">
+            <img src="images/aguasanta.png" alt="Leba Tenis na Grama">
         </div>
     </section>
 
