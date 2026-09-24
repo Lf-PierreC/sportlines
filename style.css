@@ -578,14 +578,14 @@
             }
 
             /* 2. Ajustes na Seção Hero (Início) */
+            /* 2. Ajustes na Seção Hero (Início) */
             .hero {
-                padding: 50% 5%; /* Mais espaço no topo */
-                padding-bottom: 2%;
-                min-height: 70vh; /* Garante altura suficiente */
+                padding: 155px 5% 20px; /* Usa px em vez de % para não empurrar o texto muito para baixo */
+                min-height: 75vh;
                 align-items: flex-start;
             }
             .hero-detalhe-canto {
-                width: 100%; /* Adapta a arte do canto para a tela do celular */
+                width: 100%; 
             }
             .hero-text {
                 max-width: 100%;
@@ -594,28 +594,31 @@
                 z-index: 3;
             }
             .hero-text h1 {
-                font-size: 1.5rem; /* Fonte um pouco menor */
+                font-size: 1.7rem; 
                 line-height: 1.2;
             }
-            
             .hero-text p {
-                font-size: .8rem; /* Fonte um pouco menor */
+                font-size: 0.75rem; 
             }
 
-            /* Reposiciona a imagem principal para o rodapé da área de Início */
+            /* Reposiciona a imagem principal */
             .hero-image {
                 width: 100%;
-                height: 40%;
+                height: 45%; /* Altura ideal para a foto brilhar no fundo */
                 top: auto;
                 bottom: 0;
+                right: 0; /* CORREÇÃO: Puxa a foto de volta para o centro (anula o -110px do PC) */
+                left: 0;
             }
+            
             .hero-image img {
-                /* Muda o degradê para: transparente em cima, nítido embaixo */
-                -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 60%);
-                mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 60%);
+                /* 1º DEGRADÊ: Máscara que apaga o topo da foto (Mistura com o branco do cabeçalho) */
+                -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%);
+                mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%);
+                margin-top: 30px;
             }
 
-            /* Película de Degradê por cima da foto (Apenas Mobile) */
+            /* 2º DEGRADÊ: Película verde escura na base (Mistura com a próxima seção) */
             .hero-image::after {
                 content: '';
                 position: absolute;
@@ -623,11 +626,10 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                z-index: 2; /* Garante que fique por cima da tag img */
-                pointer-events: none; /* Garante que não bloqueie os cliques na tela */
-                
-                /* Opção B (Se preferir escurecer a base com o verde escuro): */
-                background: linear-gradient(to top, rgba(1, 92, 83, 1) 0%, rgba(1, 92, 83, 0) 40%); 
+                z-index: 2; 
+                pointer-events: none; 
+                /* Usa a sua variável de cor para criar o fade do verde para o transparente */
+                background: linear-gradient(to top, var(--verde-escuro) 0%, transparent 60%); 
             }
 
             .grid-features {
@@ -706,6 +708,25 @@
                 font-size: .8em;
                 text-align: justify;
             }
+
+            
+            .produto-img {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                position: relative; /* FUNDAMENTAL: Permite posicionar itens dentro dele com absolute */
+                width: 100%;
+            }
+            
+            .produto-img img {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+                border-radius: 20%;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+                cursor: pointer;
+            }
+
             
 
             /* 4. Ajustes de Espaçamento Geral */
@@ -722,24 +743,38 @@
                 font-size: 1.1em;
             }
 
+           /* Carrossel de Parceiros no Mobile */
             .parceiros-logos {
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start; /* Alinha à esquerda para iniciar a rolagem */
                 align-items: center;
-                flex-wrap: wrap;
-                gap: 20px;
+                flex-wrap: nowrap; /* Força todas as logos a ficarem na mesma linha */
+                gap: 40px; /* Espaço entre uma logo e outra */
+                overflow-x: auto; /* Habilita o deslize lateral */
+                -webkit-overflow-scrolling: touch; /* Deixa o deslize suave no "dedo" */
+                padding-bottom: 20px; /* Dá um respiro para a base */
+                
+                /* Esconde a barra de rolagem feia nativa do navegador */
+                scrollbar-width: none; 
+                -ms-overflow-style: none; 
+            }
+
+            .parceiros-logos::-webkit-scrollbar {
+                display: none; /* Esconde a barra no Chrome/Safari */
             }
 
             .parceiros-logos img {
-                max-width: 130px;
-                margin: 0 20px;
-                display: inline-block !important; /* Força o elemento a aceitar o movimento */
+                max-width: 90px;
+                margin: 0; 
+                flex-shrink: 0; /* FUNDAMENTAL: Impede que as imagens encolham */
+                display: inline-block !important; 
                 transition: transform 0.3s ease !important;
             }
 
             .parceiros-logos img:hover {
                 transform: translateY(-8px) !important;
             }
+            
 
             /* Estilo do Card de Produto (E-commerce) */
             .catalogo-card {
