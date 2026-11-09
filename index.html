@@ -3,282 +3,1229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sportlines — Equipamentos profissionais para marcação e manutenção de campos esportivos. Marcador Elétrico Plug & Spray, Spreader, Redes de Campo, Tira Plug e Bandeiras de Escanteio.">
+    <meta name="theme-color" content="#015c53">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="./images/logo-3.png">
+    <link rel="icon" type="image/svg+xml" href="./Logo Vetor.svg">
+    <link rel="alternate icon" type="image/png" href="./images/logo-3.png">
     <title>Sportlines</title>
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="./images/logo-2.png" alt="Sportlines Logo">
-        </div>
-        
-        <!-- Botão Hambúrguer (Aparece só no mobile) -->
-        <button class="menu-toggle" onclick="toggleMenu()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-
-        <nav id="menu-principal">
-            <ul>
-                <!-- Adicionado onclick="toggleMenu()" para fechar o menu ao clicar em um link -->
-                <li><a href="#inicio" onclick="toggleMenu()">Início</a></li>
-                <li><a href="#maquina" onclick="toggleMenu()">A Máquina</a></li>
-                <li><a href="#artigos" onclick="toggleMenu()">Artigos Esportivos</a></li>
-                <li><a href="#parceiros" onclick="toggleMenu()">Parceiros</a></li>
-                <!-- Botão do WhatsApp que aparecerá apenas dentro do menu no celular -->
-                <li class="btn-mobile-only"><a href="https://wa.me/5511988067964" class="btn">Clique e Conheça</a></li>
-            </ul>
-        </nav>
-        
-        <!-- Botão do WhatsApp do PC -->
-        <a href="https://wa.me/5511988067964" class="btn btn-desktop-only">Clique e Conheça</a>
-    </header>
-
-    <section id="inicio" class="hero">
-        <!-- Imagem decorativa do canto inspirada na sua arte -->
-        <img src="images/canto-1.png" alt="Detalhe decorativo" class="hero-detalhe-canto">
-
-        <div class="hero-text">
-            <h1>Mais precisão e menos gasto com tinta</h1>
-            <p>Com sistema Plug & Spray e bateria de longa duração, o Marcador Elétrico Sportlines garante marcação profissional em minutos e com baixo consumo de insumos.</p>
-            <a href="#maquina" class="btn">Ver Vantagens e Preço</a>
-        </div>
-        <div class="hero-image">
-            <img src="images/maquina-1.png" alt="Marcador de Linhas em Ação">
-        </div>
-    </section>
-
-    <section id="maquina" class="produto">
-        <div class="produto-img">
-            <img src="./images/maquina-4.jpg" alt="Marcador de Linhas Sportlines" style="cursor: pointer;" onclick="abrirModalGaleria('Marcador de Linhas', ['./images/maquina-4.jpg', './images/maquina-5.jpg', './images/maquina-2.jpg','./images/maquina-3.jpg'], 'O Marcador de Linhas Sportlines produz uma linha consistente e de alta qualidade.')">
-            <!-- Botão posicionado por cima da foto -->
-            <button class="btn-sobre-imagem" onclick="abrirModalGaleria('Marcador de Linhas', ['./images/maquina-4.jpg', './images/maquina-5.jpg', './images/maquina-2.jpg','./images/maquina-3.jpg'], 'O Marcador de Linhas Sportlines produz uma linha consistente e de alta qualidade.')">
-                Saiba Mais
-            </button>
-        </div>
-        <div class="produto-info">
-            <h2>Marcador Elétrico</h2>
-            <p>O Marcador de Campo Sportlines é uma solução para marcação das linhas de jogo nos Campos de Futebol, Rugby, Tênis e diversas outras modalidades.</p>
-            <br>
-            <p>Esta opção apresenta um sistema "plug and spray " para conexão rápida e fácil de tintas. Leve e de tamanho compacto, o Marcador de Linhas Sportlines produz uma linha consistente e de alta qualidade.</p>
-            <br>
-            <p>A máquina tem uma bateria recarregável de longa duração e válvula pulverizadora de tinta, com mecanismo de disco ascensor para facilitar a sua utilização.</p>
-        </div>
-    </section>
-
-    <section class="caracteristicas">
-        <h2>Características Técnicas</h2>
-        <div class="grid-features">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <p>Bateria 12V recarregável de longa duração.</p>
+    <!-- Barra Superior Informativa -->
+    <div class="topbar">
+        <div class="container topbar-inner">    
+            <div class="topbar-badges">
+                <span class="topbar-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Padrão Oficial para Gramados Esportivos
+                </span>
+                <span class="topbar-divider" aria-hidden="true">•</span>
+                <span class="topbar-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+                    Envio para todo o Brasil
+                </span>
             </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <p>Fabricada em tubos de aço galvanizado.</p>
+            <div class="topbar-links">
+                <a href="https://instagram.com/sportlinesbrasil" target="_blank" rel="noopener noreferrer" class="topbar-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    @sportlinesbrasil
+                </a>
+                <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Sportlines%20e%20gostaria%20de%20atendimento." target="_blank" rel="noopener noreferrer" class="topbar-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                    (11) 98806-7964
+                </a>
             </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <p>Pneus com câmara e rolamento.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <p>Compartimento para tanque de até 20L.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <p>Bicos aspersores com regulagem de saída de tinta.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <p>Regulador do mecanismo de discos de marcação de 5 á 20 cm.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <p>Baixo consumo de tinta.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <p>Equipamento de fácil uso para trabalhar.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="artigos" class="catalogo">
-        <h2>Artigos Esportivos</h2>
-        <div class="grid-catalogo">
-            
-            <!-- Produto 1 -->
-            <div class="catalogo-card">
-                <img id="marcador" src="./images/maquina-1.png" alt="Marcador Sportlines" style="cursor: pointer;" onclick="abrirModalGaleria('Marcador de Linhas', ['./images/maquina-4.jpg', './images/maquina-5.jpg', './images/maquina-2.jpg','./images/maquina-3.jpg'], 'O Marcador de Linhas Sportlines produz uma linha consistente e de alta qualidade.')">
-                <div class="catalogo-info">
-                    <h3>Marcador de Campo Elétrico</h3>
-                    <p>Nosso marcador produz uma linha consistente e de alta qualidade pelo melhor preço do mercado.</p>
-                    <a href="https://wa.me/5511988067964" class="btn-comprar">Solicitar Orçamento</a>
-                </div>
-            </div>
-
-            <!-- Produto 2 -->
-            <div class="catalogo-card">
-                <img src="./images/rede_campo/rede-campo1.png" alt="Rede de Gol" style="cursor: pointer;" onclick="abrirModalGaleria('Marcador de Linhas', ['./images/rede_campo/rede-campo1.png', './images/rede_campo/rede-campo2.jpeg', './images/rede_campo/rede-campo3.jpeg', './images/rede_campo/rede-campo4.jpeg', './images/rede_campo/rede-campo5.jpeg', './images/rede_campo/rede-campo7.jpeg'], 'O Marcador de Linhas Sportlines produz uma linha consistente e de alta qualidade.')">
-                <div class="catalogo-info">
-                    <h3>Rede de Campo</h3>
-                    <p>Rede com fio de alta densidade e proteção UV. Resistente a impactos e variações climáticas. Padrão oficial.</p>
-                    <a href="https://wa.me/5511988067964" class="btn-comprar">Solicitar Orçamento</a>
-                </div>
-            </div>
-
-            <!-- Produto 3 -->
-            <div class="catalogo-card">
-                <img src="./images/spreader/spreader.png" alt="Spreader Sportlines" style="cursor: pointer;" onclick="abrirModalGaleria('Spreader Profissional', ['./images/spreader/spreader.png', './images/spreader/spreader-2.jpeg', './images/spreader/spreader-3.jpeg', './images/spreader/spreader-4.jpeg', './images/spreader/spreader-5.jpeg', './images/spreader/spreader-6.jpeg'], 'O Spreader Sportlines é a ferramenta ideal para a manutenção e o cuidado de gramados esportivos, desenvolvido para a distribuição uniforme de fertilizantes, sementes e areia.')">
-                <div class="catalogo-info">
-                    <h3>Spreader Profissional</h3>
-                    <p>Distribuidor de alta precisão para fertilizantes, sementes e areia. Garante cobertura uniforme e preservação do gramado.</p>
-                    <a href="https://wa.me/5511988067964" class="btn-comprar">Solicitar Orçamento</a>
-                </div>
-            </div>
-
-            <div class="catalogo-card">
-                <img src="./images/tira-plug.png" alt="Tira Plug Sportlines" style="cursor: pointer;" onclick="abrirModalGaleria('Tira Plug Profissional', ['./images/tira-plug.png'], 'O Tira Plug Sportlines é a ferramenta manual indispensável para a manutenção corretiva e reparo rápido de gramados esportivos, permitindo a substituição limpa e precisa de torrões e plugues de grama.')">
-                <div class="catalogo-info">
-                    <h3>Tira Plug Profissional</h3>
-                    <p>Ferramenta manual de alta resistência para remoção e substituição precisa de plugues de grama em reparos rápidos do campo.</p>
-                    <a href="https://wa.me/5511988067964" class="btn-comprar">Solicitar Orçamento</a>
-                </div>
-            </div>
-
-            <div class="catalogo-card">
-                <img src="./images/bandeira_escanteio/bandeira3.jpeg" alt="Kit Bandeiras de Escanteio" style="cursor: pointer;" onclick="abrirModalGaleria('Kit Bandeiras de Escanteio', ['./images/bandeira_escanteio/bandeira1.jpeg', './images/bandeira_escanteio/bandeira2.jpeg', './images/bandeira_escanteio/bandeira3.jpeg', './images/bandeira_escanteio/bandeira4.jpeg'], 'O Kit de Bandeiras de Escanteio Sportlines conta com hastes flexíveis, sistema de mola na base e bandeiras em tecido náilon de alta resistência e visibilidade oficial.')">
-                <div class="catalogo-info">
-                    <h3>Kit Bandeiras de Escanteio</h3>
-                    <p>Jogo completo com hastes flexíveis e bandeiras em tecido náilon resistente. Sistema de mola na base para absorção de impactos.</p>
-                    <a href="https://wa.me/5511988067964" class="btn-comprar">Solicitar Orçamento</a>
-                </div>
-            </div>
-
-        </div>
-    </section> 
-
-    <section id="parceiros" class="parceiros">
-        <h2>Quem Confia na Sportlines</h2>
-        <div class="parceiros-logos">
-            <img src="images/tenis-leba.jpg" alt="Leba Tenis na Grama">
-            <img src="images/aguasanta.png" alt="Leba Tenis na Grama">
-        </div>
-    </section>
-
-    <footer>
-        <div class="contato-info">
-            <p><strong>WhatsApp:</strong> (11) 98806-7964</p>
-            <p><strong>Instagram:</strong> @sportlinesbrasil</p>
-        </div>
-        <br>
-        <p>&copy; 2026 Sportlines. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Janela Flutuante (Modal) com Galeria -->
-    <div id="modalProduto" class="modal">
-        <div class="modal-content">
-            <span class="fechar-modal" onclick="fecharModal()">&times;</span>
-            
-            <!-- Imagem Principal -->
-            <img id="modal-imagem-principal" src="" class="modal-img" alt="Foto do Produto">
-            
-            <!-- Área das Miniaturas -->
-            <div id="modal-miniaturas" class="galeria-miniaturas"></div>
-            
-            <h2 id="modal-titulo" style="color: var(--verde-escuro); margin-bottom: 15px;"></h2>
-            <p id="modal-descricao" style="margin-bottom: 20px; color: #555;"></p>
-            <a href="https://wa.me/5511988067964" class="btn">Falar com Consultor</a>
         </div>
     </div>
 
+    <!-- Cabeçalho Principal -->
+    <header id="header">
+        <div class="container header-inner">
+            <a href="#inicio" class="logo" aria-label="Sportlines - Voltar ao início">
+                <img src="./images/logo-2.png" alt="Sportlines Logo" width="162" height="60">
+            </a>
+
+            <nav id="menu-principal" aria-label="Navegação Principal">
+                <ul>
+                    <li><a href="#inicio" class="nav-link active" onclick="fecharMenuMobile()">Início</a></li>
+                    <li><a href="#maquina" class="nav-link" onclick="fecharMenuMobile()">Máquina</a></li>
+                    <li><a href="#caracteristicas" class="nav-link" onclick="fecharMenuMobile()">Vantagens</a></li>
+                    <li><a href="#artigos" class="nav-link" onclick="fecharMenuMobile()">Catálogo</a></li>
+                    <li><a href="#parceiros" class="nav-link" onclick="fecharMenuMobile()">Parceiros</a></li>
+                    <li><a href="#faq" class="nav-link" onclick="fecharMenuMobile()">Dúvidas</a></li>
+                    <li class="btn-mobile-only">
+                        <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Sportlines%20e%20quero%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            Falar com Especialista
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button type="button" class="btn-orcamento-header" onclick="abrirModalOrcamento()" aria-label="Abrir lista de orçamento">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>
+                    <span class="btn-orcamento-label">Orçamento</span>
+                    <span id="badge-orcamento" class="orcamento-count" hidden>0</span>
+                </button>
+
+                <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Sportlines%20e%20gostaria%20de%20conhecer%20as%20solu%C3%A7%C3%B5es%20para%20campos%20esportivos." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-desktop-only">
+                    Falar com Consultor
+                </a>
+
+                <button type="button" class="menu-toggle" id="btn-menu-toggle" onclick="toggleMenu()" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu de navegação">
+                    <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Hero -->
+        <section id="inicio" class="hero">
+            <img src="images/canto-1.png" alt="" class="hero-detalhe-canto" aria-hidden="true">
+
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    
+                    <h1>Mais precisão no campo e <span >menos gasto com tinta</span></h1>
+                    <p>Com sistema <strong>Plug &amp; Spray</strong> e bateria 12V de longa duração, o Marcador Elétrico Sportlines garante linhas perfeitas e padronizadas em minutos, com baixíssimo consumo de insumos.</p>
+                    
+                    <div class="hero-cta-group">
+                        <a href="#maquina" class="btn btn-primary btn-lg">
+                            Conhecer a Máquina
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                        </a>
+                        <a href="#artigos" class="btn btn-outline btn-lg">
+                            Ver Catálogo Completo
+                        </a>
+                    </div>
+
+                    <div class="hero-modalidades">
+                        <span>Ideal para:</span>
+                        <div class="modalidades-tags">
+                            <span class="tag-modalidade">Futebol</span>
+                            <span class="tag-modalidade">Society</span>
+                            <span class="tag-modalidade">Rugby</span>
+                            <span class="tag-modalidade">Tênis na Grama</span>
+                            <span class="tag-modalidade">Atletismo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image-card">
+                        <img src="images/maquina-1.png" alt="Marcador Elétrico de Linhas Sportlines em campo de futebol profissional" fetchpriority="high">
+                        <button type="button" class="hero-gallery-trigger" onclick="abrirModalProduto('marcador')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+                            Ver Galeria
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barra de Métricas / Destaques Rápidos -->
+            <div class="container">
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-value">12V</span>
+                        <span class="stat-label">Bateria recarregável de longa autonomia</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">5 a 20 cm</span>
+                        <span class="stat-label">Regulagem de largura nos discos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">Até 20L</span>
+                        <span class="stat-label">Compartimento para galão Plug &amp; Spray</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Estrutura em aço galvanizado anticorrosão</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre a Máquina (Showcase Interativo) -->
+        <section id="maquina" class="produto-section">
+            <div class="container produto-grid">
+                <div class="produto-showcase">
+                    <div class="showcase-main-wrapper">
+                        <span class="showcase-badge">Carro-Chefe Sportlines</span>
+                        <img id="showcase-main-img" src="./images/maquina-4.jpg" alt="Marcador Elétrico de Linhas Sportlines" onclick="abrirModalProduto('marcador')">
+                        <button type="button" class="btn-sobre-imagem" onclick="abrirModalProduto('marcador')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                            Ampliar Detalhes
+                        </button>
+                    </div>
+                    <div class="showcase-thumbs" role="group" aria-label="Fotos do Marcador Elétrico">
+                        <button type="button" class="showcase-thumb active" onclick="trocarFotoShowcase(this, './images/maquina-4.jpg')" aria-label="Ver foto 1 do marcador">
+                            <img src="./images/maquina-4.jpg" alt="Vista lateral do marcador" loading="lazy">
+                        </button>
+                        <button type="button" class="showcase-thumb" onclick="trocarFotoShowcase(this, './images/maquina-1.png')" aria-label="Ver foto 2 do marcador">
+                            <img src="./images/maquina-1.png" alt="Marcador no estádio" loading="lazy">
+                        </button>
+                        <button type="button" class="showcase-thumb" onclick="trocarFotoShowcase(this, './images/maquina-6.jpg')" aria-label="Ver foto 3 do marcador">
+                            <img src="./images/maquina-6.jpg" alt="Detalhe do galão e discos" loading="lazy">
+                        </button>
+                        <button type="button" class="showcase-thumb" onclick="trocarFotoShowcase(this, './images/maquina-2.jpg')" aria-label="Ver foto 4 do marcador">
+                            <img src="./images/maquina-2.jpg" alt="Detalhe frontal dos discos de pintura" loading="lazy">
+                        </button>
+                        <button type="button" class="showcase-thumb" onclick="trocarFotoShowcase(this, './images/maquina-3.jpg')" aria-label="Ver foto 5 do marcador">
+                            <img src="./images/maquina-3.jpg" alt="Estrutura em aço galvanizado" loading="lazy">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="produto-info">
+                    <span class="section-eyebrow">Alta Performance em Campo</span>
+                    <h2>Marcador Elétrico de Campo Sportlines</h2>
+                    <p class="produto-lead">Projetado para clubes, estádios, centros de treinamento e arenas esportivas que exigem linhas perfeitamente definidas com rapidez operacional e redução drástica no desperdício de tinta.</p>
+
+                    <div class="produto-highlights">
+                        <div class="highlight-row">
+                            <div class="highlight-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                            </div>
+                            <div>
+                                <h3>Sistema Plug &amp; Spray</h3>
+                                <p>Conexão direta, rápida e limpa com o galão de tinta de até 20L. Sem sujeira, sem funis e pronto para operar em segundos.</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-row">
+                            <div class="highlight-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"/></svg>
+                            </div>
+                            <div>
+                                <h3>Disco Ascensor com Regulagem de 5 a 20 cm</h3>
+                                <p>Delimitadores laterais precisos que impedem o espalhamento da névoa, garantindo bordas retas e nítidas em qualquer altura de grama.</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-row">
+                            <div class="highlight-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                            </div>
+                            <div>
+                                <h3>Robustez Industrial e Leveza no Manejo</h3>
+                                <p>Chassi em tubos de aço galvanizado com pneus pneumáticos de rolamento blindado para deslizar suavemente mesmo em terrenos irregulares.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto-actions">
+                        <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20e%20condi%C3%A7%C3%B5es%20para%20o%20Marcador%20El%C3%A9trico%20Sportlines." target="_blank" rel="noopener noreferrer" class="btn btn-lime btn-lg">
+                            Solicitar Preço no WhatsApp
+                        </a>
+                        <button type="button" class="btn btn-outline-light btn-lg" data-add-quote="marcador" onclick="alternarItemOrcamento('marcador')">
+                            + Adicionar à Lista
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Características Técnicas -->
+        <section id="caracteristicas" class="caracteristicas">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Engenharia de Precisão</span>
+                    <h2>Características Técnicas</h2>
+                    <p>Cada componente do Marcador Elétrico Sportlines foi dimensionado para oferecer durabilidade máxima e operação simples no dia a dia do campo.</p>
+                </div>
+
+                <div class="grid-features">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10.5h.375c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125H21M4.5 10.5H18V15H4.5v-4.5zM3.75 18h15A2.25 2.25 0 0021 15.75v-6a2.25 2.25 0 00-2.25-2.25h-15A2.25 2.25 0 001.5 9.75v6A2.25 2.25 0 003.75 18z"/></svg>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Bateria 12V Recarregável</h3>
+                            <p>Longa duração para marcar múltiplos campos com uma única carga e pressão constante.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Aço Galvanizado</h3>
+                            <p>Estrutura tubular tratada contra ferrugem, umidade e exposição contínua ao sol.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" d="M12 3v6m0 6v6M3 12h6m6 0h6"/></svg>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Pneus com Câmara e Rolamento</h3>
+                            <p>Tração estável e deslocamento leve que preserva o gramado sem deixar marcas.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Compartimento até 20L</h3>
+                            <p>Suporte amplo e seguro para bombonas e tanques de tinta de até 20 litros.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Bicos Aspersores Reguláveis</h3>
+                            <p>Controle fino da vazão e do leque de pulverização para cobertura uniforme.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h18m-4.5-12L21 9m0 0l-4.5 4.5M21 9H3"/></svg>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Faixas de 5 a 20 cm</h3>
+                            <p>Ajuste rápido nos discos de marcação para atender diferentes regras e modalidades.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Baixo Consumo de Tinta</h3>
+                            <p>Pulverização direta e concentrada que gera economia real a cada partida.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Operação Ergonômica</h3>
+                            <p>Guidão confortável com acionamento prático no punho para trabalhar sem esforço.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Catálogo de Artigos Esportivos -->
+        <section id="artigos" class="catalogo">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Soluções Completas para o seu Campo</span>
+                    <h2>Catálogo de Equipamentos &amp; Artigos Esportivos</h2>
+                    <p>Clique nas fotos para explorar a galeria de cada produto ou adicione múltiplos itens à sua <strong>Lista de Orçamento</strong> para enviar tudo de uma só vez no WhatsApp.</p>
+                </div>
+
+                <!-- Filtros de Categoria -->
+                <div class="catalogo-filtros" role="tablist" aria-label="Filtrar produtos por categoria">
+                    <button type="button" class="filtro-btn active" data-filter="todos" onclick="filtrarCatalogo('todos', this)">
+                        Todos os Produtos (7)
+                    </button>
+                    <button type="button" class="filtro-btn" data-filter="marcacao" onclick="filtrarCatalogo('marcacao', this)">
+                        Marcação de Campo
+                    </button>
+                    <button type="button" class="filtro-btn" data-filter="manutencao" onclick="filtrarCatalogo('manutencao', this)">
+                        Manutenção de Gramado
+                    </button>
+                    <button type="button" class="filtro-btn" data-filter="jogo" onclick="filtrarCatalogo('jogo', this)">
+                        Equipamentos de Jogo
+                    </button>
+                </div>
+
+                <div class="grid-catalogo" id="grid-catalogo">
+                    <!-- Produto 1: Marcador -->
+                    <article class="catalogo-card" data-category="marcacao" data-product-id="marcador">
+                        <div class="card-media" onclick="abrirModalProduto('marcador')">
+                            <span class="card-category-badge">Marcação</span>
+                            <span class="card-photo-count">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
+                                Ampliar
+                            </span>
+                            <img src="./images/maquina-1.png" alt="Marcador de Campo Elétrico Sportlines" loading="lazy">
+                            <div class="card-media-overlay">
+                                <span>Ver Galeria e Especificações</span>
+                            </div>
+                        </div>
+                        <div class="catalogo-info">
+                            <div class="card-specs">
+                                <span>Bateria 12V</span>
+                                <span>Faixas 5–20 cm</span>
+                                <span>Plug &amp; Spray</span>
+                            </div>
+                            <h3>Marcador de Campo Elétrico</h3>
+                            <p>Produz linhas consistentes e de alta definição para Futebol, Society, Rugby e Tênis com economia superior de tinta.</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20*Marcador%20de%20Campo%20El%C3%A9trico%20Sportlines*." target="_blank" rel="noopener noreferrer" class="btn-comprar">
+                                    Solicitar Orçamento
+                                </a>
+                                <button type="button" class="btn-add-lista" data-add-quote="marcador" onclick="alternarItemOrcamento('marcador')" title="Adicionar à lista de orçamento">
+                                    + Lista
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Produto 2: Rede de Campo -->
+                    <article class="catalogo-card" data-category="jogo" data-product-id="rede">
+                        <div class="card-media" onclick="abrirModalProduto('rede')">
+                            <span class="card-category-badge">Equipamento de Jogo</span>
+                            <span class="card-photo-count">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
+                                Ampliar
+                            </span>
+                            <img src="./images/rede_campo/rede-campo1.png" alt="Rede de Campo Padrão Oficial Sportlines" loading="lazy">
+                            <div class="card-media-overlay">
+                                <span>Ver Galeria e Especificações</span>
+                            </div>
+                        </div>
+                        <div class="catalogo-info">
+                            <div class="card-specs">
+                                <span>Alta Densidade</span>
+                                <span>Proteção UV</span>
+                                <span>Padrão Oficial</span>
+                            </div>
+                            <h3>Rede de Campo Oficial</h3>
+                            <p>Confeccionada com fio de alta densidade e tratamento UV. Máxima resistência a impactos intensos e variações climáticas.</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20a%20*Rede%20de%20Campo%20Oficial%20Sportlines*." target="_blank" rel="noopener noreferrer" class="btn-comprar">
+                                    Solicitar Orçamento
+                                </a>
+                                <button type="button" class="btn-add-lista" data-add-quote="rede" onclick="alternarItemOrcamento('rede')" title="Adicionar à lista de orçamento">
+                                    + Lista
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Produto 3: Spreader Profissional -->
+                    <article class="catalogo-card" data-category="manutencao" data-product-id="spreader">
+                        <div class="card-media" onclick="abrirModalProduto('spreader')">
+                            <span class="card-category-badge">Manutenção</span>
+                            <span class="card-photo-count">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
+                                Ampliar
+                            </span>
+                            <img src="./images/spreader/spreader.png" alt="Spreader Profissional Sportlines" loading="lazy">
+                            <div class="card-media-overlay">
+                                <span>Ver Galeria e Especificações</span>
+                            </div>
+                        </div>
+                        <div class="catalogo-info">
+                            <div class="card-specs">
+                                <span>Fertilizantes &amp; Sementes</span>
+                                <span>Cobertura Uniforme</span>
+                            </div>
+                            <h3>Spreader Profissional</h3>
+                            <p>Distribuidor rotativo de alta precisão para fertilizantes, sementes e areia. Garante nutrição homogênea e preservação do gramado.</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20*Spreader%20Profissional%20Sportlines*." target="_blank" rel="noopener noreferrer" class="btn-comprar">
+                                    Solicitar Orçamento
+                                </a>
+                                <button type="button" class="btn-add-lista" data-add-quote="spreader" onclick="alternarItemOrcamento('spreader')" title="Adicionar à lista de orçamento">
+                                    + Lista
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Produto 4: Tira Plug -->
+                    <article class="catalogo-card" data-category="manutencao" data-product-id="tiraplug">
+                        <div class="card-media" onclick="abrirModalProduto('tiraplug')">
+                            <span class="card-category-badge">Manutenção</span>
+                            <span class="card-photo-count">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
+                                Ampliar
+                            </span>
+                            <img src="./images/tira-plug.png" alt="Tira Plug Profissional Sportlines" loading="lazy">
+                            <div class="card-media-overlay">
+                                <span>Ver Detalhes e Especificações</span>
+                            </div>
+                        </div>
+                        <div class="catalogo-info">
+                            <div class="card-specs">
+                                <span>Corte Limpo</span>
+                                <span>Reparo Rápido</span>
+                                <span>Alta Resistência</span>
+                            </div>
+                            <h3>Tira Plug Profissional</h3>
+                            <p>Ferramenta manual indispensável para manutenção corretiva de gramados, permitindo extração e substituição precisa de plugues de grama.</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20*Tira%20Plug%20Profissional%20Sportlines*." target="_blank" rel="noopener noreferrer" class="btn-comprar">
+                                    Solicitar Orçamento
+                                </a>
+                                <button type="button" class="btn-add-lista" data-add-quote="tiraplug" onclick="alternarItemOrcamento('tiraplug')" title="Adicionar à lista de orçamento">
+                                    + Lista
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Produto 5: Kit Bandeiras de Escanteio -->
+                    <article class="catalogo-card" data-category="jogo" data-product-id="bandeiras">
+                        <div class="card-media" onclick="abrirModalProduto('bandeiras')">
+                            <span class="card-category-badge">Equipamento de Jogo</span>
+                            <span class="card-photo-count">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
+                                Ampliar
+                            </span>
+                            <img src="./images/bandeira_escanteio/bandeira3.jpeg" alt="Kit Bandeiras de Escanteio Oficial Sportlines" loading="lazy">
+                            <div class="card-media-overlay">
+                                <span>Ver Galeria e Especificações</span>
+                            </div>
+                        </div>
+                        <div class="catalogo-info">
+                            <div class="card-specs">
+                                <span>Base com Mola</span>
+                                <span>Haste Flexível</span>
+                                <span>Tecido Náilon</span>
+                            </div>
+                            <h3>Kit Bandeiras de Escanteio</h3>
+                            <p>Jogo completo com hastes flexíveis, sistema de mola na base para absorção de impactos e segurança dos atletas, com tecido náilon de alta visibilidade.</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20*Kit%20Bandeiras%20de%20Escanteio%20Sportlines*." target="_blank" rel="noopener noreferrer" class="btn-comprar">
+                                    Solicitar Orçamento
+                                </a>
+                                <button type="button" class="btn-add-lista" data-add-quote="bandeiras" onclick="alternarItemOrcamento('bandeiras')" title="Adicionar à lista de orçamento">
+                                    + Lista
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Produto 6: Fixador de Rede -->
+                    <article class="catalogo-card" data-category="jogo" data-product-id="fixador">
+                        <div class="card-media" onclick="abrirModalProduto('fixador')">
+                            <span class="card-category-badge">Equipamento de Jogo</span>
+                            <span class="card-photo-count">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
+                                Ampliar
+                            </span>
+                            <img src="./images/fixador_rede/fixador-01.jpeg" alt="Fixador de Rede para Traves Sportlines" loading="lazy">
+                            <div class="card-media-overlay">
+                                <span>Ver Galeria e Especificações</span>
+                            </div>
+                        </div>
+                        <div class="catalogo-info">
+                            <div class="card-specs">
+                                <span>Encaixe Rápido</span>
+                                <span>Base Anatômica</span>
+                                <span>Segurança Total</span>
+                            </div>
+                            <h3>Fixador de Rede para Traves</h3>
+                            <p>Prendedor profissional com base curva que se adapta perfeitamente à trave. Substitui ganchos metálicos, garantindo fixação firme e segurança para os atletas.</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20*Fixador%20de%20Rede%20para%20Traves%20Sportlines*." target="_blank" rel="noopener noreferrer" class="btn-comprar">
+                                    Solicitar Orçamento
+                                </a>
+                                <button type="button" class="btn-add-lista" data-add-quote="fixador" onclick="alternarItemOrcamento('fixador')" title="Adicionar à lista de orçamento">
+                                    + Lista
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Produto 7: Lawn Striper Roller -->
+                    <article class="catalogo-card" data-category="marcacao" data-product-id="lawnstriper">
+                        <div class="card-media" onclick="abrirModalProduto('lawnstriper')">
+                            <span class="card-category-badge">Marcação</span>
+                            <span class="card-photo-count">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
+                                Ampliar
+                            </span>
+                            <img src="./images/marcador de gramado/WhatsApp Image 2026-11-09 at 12.02.07.jpeg" alt="Lawn Striper Roller - Demarcação de Faixas no Gramado (Futebol)" loading="lazy">
+                            <div class="card-media-overlay">
+                                <span>Ver Galeria e Especificações</span>
+                            </div>
+                        </div>
+                        <div class="catalogo-info">
+                            <div class="card-specs">
+                                <span>Faixas Bicolores</span>
+                                <span>Padrão Estádio</span>
+                                <span>Rolos Modulares</span>
+                            </div>
+                            <h3>Lawn Striper Roller</h3>
+                            <p>Rolo demarcador de faixas no gramado para campos de futebol. Cria o efeito visual clássico de faixas claras e escuras padrão FIFA durante o corte.</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20*Lawn%20Striper%20Roller%20(Demarca%C3%A7%C3%A3o%20de%20Faixas%20no%20Gramado)*." target="_blank" rel="noopener noreferrer" class="btn-comprar">
+                                    Solicitar Orçamento
+                                </a>
+                                <button type="button" class="btn-add-lista" data-add-quote="lawnstriper" onclick="alternarItemOrcamento('lawnstriper')" title="Adicionar à lista de orçamento">
+                                    + Lista
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Parceiros -->
+        <section id="parceiros" class="parceiros">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Credibilidade em Campo</span>
+                    <h2>Quem Confia na Sportlines</h2>
+                    <p>Clubes profissionais e complexos esportivos de referência que utilizam nossos equipamentos na preparação e manutenção de seus gramados.</p>
+                </div>
+
+                <div class="parceiros-grid">
+                    <div class="parceiro-card">
+                        <img src="images/aguasanta.png" alt="Esporte Clube Água Santa" loading="lazy">
+                        <div class="parceiro-meta">
+                            <h3>E.C. Água Santa</h3>
+                            <span>Futebol Profissional</span>
+                        </div>
+                    </div>
+
+                    <div class="parceiro-card">
+                        <img src="images/tenis-leba.jpg" alt="Leba Tênis na Grama" loading="lazy">
+                        <div class="parceiro-meta">
+                            <h3>Leba Tênis na Grama</h3>
+                            <span>Quadras de Grama Natural</span>
+                        </div>
+                    </div>
+
+                    <div class="parceiro-card parceiro-cta-card">
+                        <div class="parceiro-cta-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                        </div>
+                        <div class="parceiro-meta">
+                            <h3>Seu Clube ou Arena</h3>
+                            <span>Atendemos clubes, prefeituras, condomínios e centros esportivos em todo o país.</span>
+                            <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Gostaria%20de%20equipar%20nosso%20campo%20com%20a%20Sportlines." target="_blank" rel="noopener noreferrer" class="parceiro-link">Falar com consultor &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Perguntas Frequentes (FAQ com <details> nativo acessível) -->
+        <section id="faq" class="faq-section">
+            <div class="container faq-container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Tire suas Dúvidas</span>
+                    <h2>Perguntas Frequentes</h2>
+                    <p>Tudo o que você precisa saber sobre operação, insumos e envio dos equipamentos Sportlines.</p>
+                </div>
+
+                <div class="faq-list">
+                    <details class="faq-item" name="faq-sportlines" open>
+                        <summary>Qual tipo de tinta pode ser utilizado no Marcador Elétrico Sportlines?</summary>
+                        <div class="faq-answer">
+                            <p>O Marcador Elétrico Sportlines é compatível com tintas específicas para demarcação de gramados esportivos e tintas acrílicas à base de água diluídas conforme a necessidade do campo. O sistema <strong>Plug &amp; Spray</strong> permite acoplar diretamente bombonas de até 20 litros com praticidade e sem desperdício.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item" name="faq-sportlines">
+                        <summary>Qual é a autonomia da bateria 12V e como é feita a recarga?</summary>
+                        <div class="faq-answer">
+                            <p>A bateria selada de 12V oferece excelente autonomia para realizar a marcação de múltiplos campos com uma única carga, mantendo a pressão constante do início ao fim. O equipamento acompanha carregador bivolt de fácil conexão.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item" name="faq-sportlines">
+                        <summary>Como funciona a regulagem de largura da linha de 5 a 20 cm?</summary>
+                        <div class="faq-answer">
+                            <p>O conjunto frontal possui discos ascensores metálicos com reguladores manuais rápidos. Basta ajustar o espaçamento entre os discos e a altura do bico aspersor para obter linhas estreitas (como no Tênis na Grama) ou faixas largas padrão FIFA/CBF (10 cm a 12 cm, chegando até 20 cm).</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item" name="faq-sportlines">
+                        <summary>A Sportlines realiza entregas para outros estados do Brasil?</summary>
+                        <div class="faq-answer">
+                            <p>Sim! Enviamos o Marcador Elétrico, o Spreader Profissional, Redes, Tira Plug e Bandeiras de Escanteio para todas as regiões do Brasil via transportadora, com suporte técnico direto e peças de reposição disponíveis.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner CTA de Conversão -->
+        <section class="cta-banner">
+            <div class="container cta-banner-inner">
+                <div class="cta-banner-text">
+                    <h2>Pronto para elevar o padrão do seu gramado esportivo?</h2>
+                    <p>Solicite uma cotação personalizada agora mesmo e receba atendimento técnico direto pelo WhatsApp.</p>
+                </div>
+                <div class="cta-banner-actions">
+                    <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Gostaria%20de%20receber%20uma%20cota%C3%A7%C3%A3o%20dos%20equipamentos%20Sportlines." target="_blank" rel="noopener noreferrer" class="btn btn-lime btn-lg">
+                        Solicitar Orçamento no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé Profissional -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo-wrap">
+                    <img src="./Logo Vetor.svg" alt="Sportlines" width="44" height="32">
+                    <span>SPORTLINES</span>
+                </div>
+                <p>Soluções profissionais de alta durabilidade para demarcação, conservação e equipagem de gramados esportivos em todo o Brasil.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#maquina">O Marcador Elétrico</a></li>
+                    <li><a href="#caracteristicas">Características Técnicas</a></li>
+                    <li><a href="#artigos">Catálogo de Produtos</a></li>
+                    <li><a href="#parceiros">Parceiros</a></li>
+                    <li><a href="#faq">Perguntas Frequentes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Linha de Produtos</h3>
+                <ul>
+                    <li><a href="#artigos" onclick="abrirModalProduto('marcador')">Marcador de Campo Elétrico</a></li>
+                    <li><a href="#artigos" onclick="abrirModalProduto('spreader')">Spreader Profissional</a></li>
+                    <li><a href="#artigos" onclick="abrirModalProduto('rede')">Rede de Campo Oficial</a></li>
+                    <li><a href="#artigos" onclick="abrirModalProduto('tiraplug')">Tira Plug Profissional</a></li>
+                    <li><a href="#artigos" onclick="abrirModalProduto('bandeiras')">Kit Bandeiras de Escanteio</a></li>
+                    <li><a href="#artigos" onclick="abrirModalProduto('fixador')">Fixador de Rede para Traves</a></li>
+                    <li><a href="#artigos" onclick="abrirModalProduto('lawnstriper')">Lawn Striper Roller</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Atendimento Direto</h3>
+                <ul class="footer-contact-list">
+                    <li>
+                        <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Sportlines." target="_blank" rel="noopener noreferrer">
+                            <strong>WhatsApp:</strong> (11) 98806-7964
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/sportlinesbrasil" target="_blank" rel="noopener noreferrer">
+                            <strong>Instagram:</strong> @sportlinesbrasil
+                        </a>
+                    </li>
+                    <li>Atendimento Comercial: Seg a Sex, 8h às 18h</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Sportlines Brasil. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Barra Flutuante de Orçamento Inteligente (Aparece quando há itens selecionados) -->
+    <div id="floating-quote-bar" class="floating-quote-bar" hidden>
+        <div class="floating-quote-info">
+            <span id="floating-quote-count" class="floating-quote-badge">0</span>
+            <span>equipamento(s) na sua Lista de Orçamento</span>
+        </div>
+        <div class="floating-quote-actions">
+            <button type="button" class="btn btn-lime btn-sm" onclick="abrirModalOrcamento()">
+                Revisar e Enviar no WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5511988067964?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Sportlines%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Conversar pelo WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.533 5.859l-1.533 5.641 5.792-1.519c1.693.897 3.621 1.409 5.676 1.409 6.627 0 12-5.373 12-12s-5.373-11.39-11.468-11.39z"/>
+        </svg>
+    </a>
+
+    <!-- Modal Nativo <dialog> de Galeria e Detalhes do Produto -->
+    <dialog id="modalProduto" class="modal-dialog" closedby="any" aria-labelledby="modal-titulo">
+        <div class="modal-box">
+            <form method="dialog" class="modal-close-form">
+                <button type="submit" class="fechar-modal" aria-label="Fechar janela de detalhes" autofocus>&times;</button>
+            </form>
+
+            <div class="modal-layout">
+                <div class="modal-gallery-col">
+                    <div class="modal-stage">
+                        <button type="button" id="modal-prev" class="modal-nav-btn prev" onclick="navegarFotoModal(-1)" aria-label="Foto anterior">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+                        </button>
+                        <img id="modal-imagem-principal" src="" class="modal-img" alt="Foto do Produto">
+                        <button type="button" id="modal-next" class="modal-nav-btn next" onclick="navegarFotoModal(1)" aria-label="Próxima foto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+                        </button>
+                        <span id="modal-contador" class="modal-counter">1 / 1</span>
+                    </div>
+                    <div id="modal-miniaturas" class="galeria-miniaturas" role="group" aria-label="Miniaturas do produto"></div>
+                </div>
+
+                <div class="modal-details-col">
+                    <span id="modal-categoria" class="section-eyebrow">Equipamento Oficial</span>
+                    <h2 id="modal-titulo"></h2>
+                    <p id="modal-descricao" class="modal-desc"></p>
+
+                    <ul id="modal-specs-list" class="modal-specs-list"></ul>
+
+                    <div class="modal-cta-stack">
+                        <a id="modal-whatsapp-link" href="https://wa.me/5511988067964" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+                            Orçar Agora pelo WhatsApp
+                        </a>
+                        <button type="button" id="modal-add-quote-btn" class="btn btn-outline btn-block">
+                            + Adicionar à Lista de Orçamento
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Modal Nativo <dialog> da Lista de Orçamento Múltiplo -->
+    <dialog id="modalOrcamento" class="modal-dialog modal-orcamento" closedby="any" aria-labelledby="orcamento-titulo">
+        <div class="modal-box">
+            <form method="dialog" class="modal-close-form">
+                <button type="submit" class="fechar-modal" aria-label="Fechar lista de orçamento" autofocus>&times;</button>
+            </form>
+
+            <div class="orcamento-header">
+                <span class="section-eyebrow">Orçamento Rápido via WhatsApp</span>
+                <h2 id="orcamento-titulo">Sua Lista de Orçamento</h2>
+                <p>Selecione os equipamentos e as quantidades desejadas para enviar seu pedido completo direto para nossa equipe comercial.</p>
+            </div>
+
+            <div id="orcamento-itens-container" class="orcamento-itens-container"></div>
+
+            <div class="orcamento-observacao">
+                <label for="orcamento-nome">Seu Nome / Clube ou Empresa (opcional)</label>
+                <input type="text" id="orcamento-nome" placeholder="Ex.: João Silva - Clube Atlético / Prefeitura">
+            </div>
+
+            <div class="orcamento-footer">
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="enviarOrcamentoWhatsApp()">
+                    Enviar Pedido Completo no WhatsApp
+                </button>
+            </div>
+        </div>
+    </dialog>
+
     <script>
-        // Função atualizada para receber uma lista de imagens
-        function abrirModalGaleria(titulo, listaImagens, descricao) {
-            document.getElementById('modal-titulo').innerText = titulo;
-            document.getElementById('modal-descricao').innerText = descricao;
-            
+        const WHATSAPP_NUMBER = '5511988067964';
+
+        // Catálogo estruturado de produtos (com títulos, descrições e fotos corrigidas)
+        const PRODUTOS = {
+            marcador: {
+                id: 'marcador',
+                categoria: 'Marcação de Campo',
+                titulo: 'Marcador de Campo Elétrico Sportlines',
+                descricao: 'O Marcador de Linhas Sportlines produz uma linha consistente, nítida e de alta qualidade com sistema Plug & Spray e bateria 12V recarregável.',
+                specs: [
+                    'Bateria 12V recarregável de longa autonomia',
+                    'Estrutura em tubos de aço galvanizado anticorrosão',
+                    'Discos ascensores com regulagem de 5 a 20 cm de largura',
+                    'Compartimento para galão de até 20L (Plug & Spray)',
+                    'Pneus pneumáticos com câmara e rolamento'
+                ],
+                imagens: [
+                    './images/maquina-4.jpg',
+                    './images/maquina-1.png',
+                    './images/maquina-6.jpg',
+                    './images/maquina-2.jpg',
+                    './images/maquina-3.jpg',
+                    './images/maquina-5.jpg'
+                ]
+            },
+            rede: {
+                id: 'rede',
+                categoria: 'Equipamento de Jogo',
+                titulo: 'Rede de Campo Padrão Oficial',
+                descricao: 'Rede confeccionada com fio de alta densidade e tratamento contra raios UV. Projetada para suportar impactos intensos e exposição climática contínua em estádios e centros esportivos.',
+                specs: [
+                    'Fio de polietileno de alta densidade e tenacidade',
+                    'Proteção UV contra ressecamento solar e chuva',
+                    'Malha e dimensões dentro do padrão oficial de campo',
+                    'Alta durabilidade para uso profissional e recreativo'
+                ],
+                imagens: [
+                    './images/rede_campo/rede-campo1.png',
+                    './images/rede_campo/rede-campo2.jpeg',
+                    './images/rede_campo/rede-campo3.jpeg',
+                    './images/rede_campo/rede-campo4.jpeg',
+                    './images/rede_campo/rede-campo5.jpeg',
+                    './images/rede_campo/rede-campo6.jpeg',
+                    './images/rede_campo/rede-campo7.jpeg'
+                ]
+            },
+            spreader: {
+                id: 'spreader',
+                categoria: 'Manutenção de Gramado',
+                titulo: 'Spreader Profissional Sportlines',
+                descricao: 'O Spreader Sportlines é a ferramenta ideal para a manutenção e o cuidado de gramados esportivos, desenvolvido para a distribuição uniforme de fertilizantes, sementes e areia.',
+                specs: [
+                    'Caçamba de alta capacidade resistente à corrosão',
+                    'Regulagem precisa de dosagem e abertura de distribuição',
+                    'Pneus largos calibrados para não marcar o gramado',
+                    'Chassi reforçado para operação intensa em campos'
+                ],
+                imagens: [
+                    './images/spreader/spreader.png',
+                    './images/spreader/spreader-2.jpeg',
+                    './images/spreader/spreader-3.jpeg',
+                    './images/spreader/spreader-4.jpeg',
+                    './images/spreader/spreader-5.jpeg',
+                    './images/spreader/spreader-6.jpeg'
+                ]
+            },
+            tiraplug: {
+                id: 'tiraplug',
+                categoria: 'Manutenção de Gramado',
+                titulo: 'Tira Plug Profissional Sportlines',
+                descricao: 'O Tira Plug Sportlines é a ferramenta manual indispensável para a manutenção corretiva e reparo rápido de gramados esportivos, permitindo a substituição limpa e precisa de torrões e plugues de grama.',
+                specs: [
+                    'Base extratora com corte limpo e padronizado',
+                    'Estrutura metálica de alta resistência com pintura eletrostática',
+                    'Punhos anatômicos antiderrapantes e apoio de pé reforçado',
+                    'Ideal para recuperação rápida da pequena área e pontos de pênalti'
+                ],
+                imagens: [
+                    './images/tira-plug.png'
+                ]
+            },
+            bandeiras: {
+                id: 'bandeiras',
+                categoria: 'Equipamento de Jogo',
+                titulo: 'Kit Bandeiras de Escanteio Oficial',
+                descricao: 'O Kit de Bandeiras de Escanteio Sportlines conta com hastes flexíveis, sistema de mola na base para absorção de impactos e bandeiras em tecido náilon de alta resistência e visibilidade oficial.',
+                specs: [
+                    'Sistema de mola flexível na base para segurança dos atletas',
+                    'Hastes resistentes nas medidas oficiais',
+                    'Bandeiras em tecido náilon impermeável de alta visibilidade',
+                    'Fixadores de solo em aço galvanizado inclusos'
+                ],
+                imagens: [
+                    './images/bandeira_escanteio/bandeira3.jpeg',
+                    './images/bandeira_escanteio/bandeira1.jpeg',
+                    './images/bandeira_escanteio/bandeira2.jpeg',
+                    './images/bandeira_escanteio/bandeira4.jpeg'
+                ]
+            },
+            fixador: {
+                id: 'fixador',
+                categoria: 'Equipamento de Jogo',
+                titulo: 'Fixador de Rede para Traves Sportlines',
+                descricao: 'O Fixador de Rede Sportlines possui design anatômico com base curva que se molda perfeitamente ao tubo da trave. Substitui ganchos metálicos pontiagudos, garantindo instalação rápida da rede, acabamento profissional e máxima segurança para goleiros e atletas.',
+                specs: [
+                    'Base anatômica curva para encaixe perfeito em traves tubulares',
+                    'Design arredondado sem pontas (evita acidentes e rasgos na rede)',
+                    'Polímero de alta resistência mecânica e proteção contra sol/chuva',
+                    'Furo central para fixação firme por parafuso e fácil manutenção'
+                ],
+                imagens: [
+                    './images/fixador_rede/fixador-01.jpeg',
+                    './images/fixador_rede/fixador-02.jpeg',
+                    './images/fixador_rede/fixador-03.jpeg',
+                    './images/fixador_rede/fixador-04.jpeg'
+                ]
+            },
+            lawnstriper: {
+                id: 'lawnstriper',
+                categoria: 'Marcação de Campo',
+                titulo: 'Lawn Striper Roller — Demarcação de Faixas no Gramado (Futebol)',
+                descricao: 'O Lawn Striper Roller Sportlines é o rolo demarcador de faixas acoplável para cortadores de grama giro-zero e tratores. Ao inclinar uniformemente as folhas da grama após o corte, cria o efeito visual de faixas bicolores (claras e escuras) padrão FIFA nos campos de futebol, sem agredir o gramado.',
+                specs: [
+                    'Demarcação estética de faixas bicolores padrão estádio profissional (Futebol)',
+                    'Rolos modulares independentes de alta densidade que acompanham as curvas e o relevo',
+                    'Estrutura e suportes de fixação em aço reforçado de alta durabilidade',
+                    'Acoplamento traseiro prático para cortadores giro-zero e tratores de corte'
+                ],
+                imagens: [
+                    './images/marcador de gramado/WhatsApp Image 2026-11-09 at 12.02.07.jpeg',
+                    './images/marcador de gramado/WhatsApp Image 2026-11-09 at 12.02.06 (3).jpeg',
+                    './images/marcador de gramado/WhatsApp Image 2026-11-09 at 12.02.07 (1).jpeg'
+                ]
+            }
+        };
+
+        // Estado da Galeria Modal
+        let produtoModalAtual = null;
+        let indiceFotoAtual = 0;
+
+        // Estado da Lista de Orçamento { [id]: quantidade }
+        const listaOrcamento = {};
+
+        // Troca a imagem em destaque na seção "A Máquina"
+        function trocarFotoShowcase(btn, imgUrl) {
+            const imgPrincipal = document.getElementById('showcase-main-img');
+            imgPrincipal.src = imgUrl;
+            document.querySelectorAll('.showcase-thumb').forEach(el => el.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        // Filtro por categoria no Catálogo
+        function filtrarCatalogo(categoria, botaoClicado) {
+            document.querySelectorAll('.filtro-btn').forEach(btn => btn.classList.remove('active'));
+            botaoClicado.classList.add('active');
+
+            document.querySelectorAll('.catalogo-card').forEach(card => {
+                const catCard = card.getAttribute('data-category');
+                if (categoria === 'todos' || catCard === categoria) {
+                    card.hidden = false;
+                } else {
+                    card.hidden = true;
+                }
+            });
+        }
+
+        // Abre o Modal Nativo <dialog> de Galeria do Produto
+        function abrirModalProduto(produtoId) {
+            const prod = PRODUTOS[produtoId];
+            if (!prod) return;
+
+            produtoModalAtual = prod;
+            indiceFotoAtual = 0;
+
+            document.getElementById('modal-categoria').textContent = prod.categoria;
+            document.getElementById('modal-titulo').textContent = prod.titulo;
+            document.getElementById('modal-descricao').textContent = prod.descricao;
+
+            const specsList = document.getElementById('modal-specs-list');
+            specsList.innerHTML = '';
+            prod.specs.forEach(spec => {
+                const li = document.createElement('li');
+                li.textContent = spec;
+                specsList.appendChild(li);
+            });
+
+            const msgWpp = encodeURIComponent(`Olá! Vi no site da Sportlines e gostaria de solicitar um orçamento para: *${prod.titulo}*.`);
+            document.getElementById('modal-whatsapp-link').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${msgWpp}`;
+
+            const btnAdd = document.getElementById('modal-add-quote-btn');
+            btnAdd.onclick = () => {
+                alternarItemOrcamento(prod.id);
+                atualizarBotoesOrcamento();
+            };
+
+            renderizarGaleriaModal();
+            atualizarBotoesOrcamento();
+
+            const dialog = document.getElementById('modalProduto');
+            if (!dialog.open) {
+                dialog.showModal();
+            }
+        }
+
+        function renderizarGaleriaModal() {
+            if (!produtoModalAtual) return;
+            const imgs = produtoModalAtual.imagens;
             const imgPrincipal = document.getElementById('modal-imagem-principal');
             const containerMiniaturas = document.getElementById('modal-miniaturas');
-            
-            // Define a primeira imagem da lista como a principal
-            imgPrincipal.src = listaImagens[0];
-            
-            // Limpa as miniaturas anteriores
+            const contador = document.getElementById('modal-contador');
+            const btnPrev = document.getElementById('modal-prev');
+            const btnNext = document.getElementById('modal-next');
+
+            imgPrincipal.src = imgs[indiceFotoAtual];
+            imgPrincipal.alt = `${produtoModalAtual.titulo} - Foto ${indiceFotoAtual + 1}`;
+            contador.textContent = `${indiceFotoAtual + 1} / ${imgs.length}`;
+
+            const temVarias = imgs.length > 1;
+            btnPrev.hidden = !temVarias;
+            btnNext.hidden = !temVarias;
             containerMiniaturas.innerHTML = '';
 
-            // Cria as miniaturas dinamicamente
-            if (listaImagens.length > 1) {
-                listaImagens.forEach((imgUrl, index) => {
-                    let miniatura = document.createElement('img');
+            if (temVarias) {
+                imgs.forEach((imgUrl, index) => {
+                    const thumbBtn = document.createElement('button');
+                    thumbBtn.type = 'button';
+                    thumbBtn.className = 'thumb-btn' + (index === indiceFotoAtual ? ' ativa' : '');
+                    thumbBtn.setAttribute('aria-label', `Ver foto ${index + 1}`);
+                    const miniatura = document.createElement('img');
                     miniatura.src = imgUrl;
-                    
-                    // Destaca a primeira miniatura
-                    if (index === 0) miniatura.classList.add('ativa');
-                    
-                    // Ação ao clicar na miniatura
-                    miniatura.onclick = function() {
-                        imgPrincipal.src = imgUrl;
-                        
-                        // Remove o destaque de todas e adiciona na clicada
-                        document.querySelectorAll('.galeria-miniaturas img').forEach(img => img.classList.remove('ativa'));
-                        miniatura.classList.add('ativa');
+                    miniatura.alt = '';
+                    thumbBtn.appendChild(miniatura);
+                    thumbBtn.onclick = () => {
+                        indiceFotoAtual = index;
+                        renderizarGaleriaModal();
                     };
-                    
-                    containerMiniaturas.appendChild(miniatura);
+                    containerMiniaturas.appendChild(thumbBtn);
+                });
+            }
+        }
+
+        function navegarFotoModal(direcao) {
+            if (!produtoModalAtual || produtoModalAtual.imagens.length <= 1) return;
+            const total = produtoModalAtual.imagens.length;
+            indiceFotoAtual = (indiceFotoAtual + direcao + total) % total;
+            renderizarGaleriaModal();
+        }
+
+        // Navegação por setas do teclado quando o modal de produto está aberto
+        document.addEventListener('keydown', (e) => {
+            const modalProd = document.getElementById('modalProduto');
+            if (modalProd && modalProd.open) {
+                if (e.key === 'ArrowLeft') navegarFotoModal(-1);
+                if (e.key === 'ArrowRight') navegarFotoModal(1);
+            }
+        });
+
+        // Funções da Lista de Orçamento
+        function alternarItemOrcamento(produtoId) {
+            if (listaOrcamento[produtoId]) {
+                delete listaOrcamento[produtoId];
+            } else {
+                listaOrcamento[produtoId] = 1;
+            }
+            atualizarBotoesOrcamento();
+        }
+
+        function alterarQuantidadeOrcamento(produtoId, delta) {
+            const atual = listaOrcamento[produtoId] || 0;
+            const novo = atual + delta;
+            if (novo <= 0) {
+                delete listaOrcamento[produtoId];
+            } else {
+                listaOrcamento[produtoId] = novo;
+            }
+            atualizarBotoesOrcamento();
+            renderizarModalOrcamento();
+        }
+
+        function atualizarBotoesOrcamento() {
+            const idsSelecionados = Object.keys(listaOrcamento);
+            const totalItens = idsSelecionados.reduce((acc, id) => acc + listaOrcamento[id], 0);
+
+            const badgeHeader = document.getElementById('badge-orcamento');
+            const floatingBar = document.getElementById('floating-quote-bar');
+            const floatingCount = document.getElementById('floating-quote-count');
+
+            if (totalItens > 0) {
+                badgeHeader.textContent = totalItens;
+                badgeHeader.hidden = false;
+                floatingCount.textContent = totalItens;
+                floatingBar.hidden = false;
+            } else {
+                badgeHeader.hidden = true;
+                floatingBar.hidden = true;
+            }
+
+            document.querySelectorAll('[data-add-quote]').forEach(btn => {
+                const id = btn.getAttribute('data-add-quote');
+                const ativo = Boolean(listaOrcamento[id]);
+                btn.classList.toggle('selecionado', ativo);
+                if (btn.classList.contains('btn-add-lista')) {
+                    btn.textContent = ativo ? '✓ Na Lista' : '+ Lista';
+                } else {
+                    btn.textContent = ativo ? '✓ Adicionado à Lista' : '+ Adicionar à Lista';
+                }
+            });
+
+            const btnModal = document.getElementById('modal-add-quote-btn');
+            if (btnModal && produtoModalAtual) {
+                const ativo = Boolean(listaOrcamento[produtoModalAtual.id]);
+                btnModal.classList.toggle('selecionado', ativo);
+                btnModal.textContent = ativo ? '✓ Na Lista de Orçamento (Remover)' : '+ Adicionar à Lista de Orçamento';
+            }
+        }
+
+        function abrirModalOrcamento() {
+            renderizarModalOrcamento();
+            const dialog = document.getElementById('modalOrcamento');
+            if (!dialog.open) {
+                dialog.showModal();
+            }
+        }
+
+        function renderizarModalOrcamento() {
+            const container = document.getElementById('orcamento-itens-container');
+            container.innerHTML = '';
+
+            Object.values(PRODUTOS).forEach(prod => {
+                const qtd = listaOrcamento[prod.id] || 0;
+                const row = document.createElement('div');
+                row.className = 'orcamento-item-row' + (qtd > 0 ? ' ativo' : '');
+                row.innerHTML = `
+                    <img src="${prod.imagens[0]}" alt="${prod.titulo}" class="orcamento-item-thumb">
+                    <div class="orcamento-item-info">
+                        <strong>${prod.titulo}</strong>
+                        <span>${prod.categoria}</span>
+                    </div>
+                    <div class="orcamento-qty-controls">
+                        <button type="button" class="qty-btn" onclick="alterarQuantidadeOrcamento('${prod.id}', -1)" aria-label="Diminuir quantidade de ${prod.titulo}">&minus;</button>
+                        <span class="qty-val">${qtd}</span>
+                        <button type="button" class="qty-btn" onclick="alterarQuantidadeOrcamento('${prod.id}', 1)" aria-label="Aumentar quantidade de ${prod.titulo}">+</button>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        function enviarOrcamentoWhatsApp() {
+            const ids = Object.keys(listaOrcamento);
+            const nomeCliente = document.getElementById('orcamento-nome').value.trim();
+
+            let linhas = ['Olá! Vim pelo site da *Sportlines* e gostaria de solicitar um orçamento:'];
+            if (nomeCliente) {
+                linhas.push(`*Cliente/Clube:* ${nomeCliente}`);
+            }
+            linhas.push('');
+
+            if (ids.length === 0) {
+                linhas.push('Gostaria de receber o catálogo completo com preços e condições de envio.');
+            } else {
+                linhas.push('*Itens selecionados:*');
+                ids.forEach(id => {
+                    const prod = PRODUTOS[id];
+                    const qtd = listaOrcamento[id];
+                    if (prod && qtd > 0) {
+                        linhas.push(`- ${qtd}x ${prod.titulo}`);
+                    }
                 });
             }
 
-            document.getElementById('modalProduto').style.display = 'flex';
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(linhas.join('\n'))}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
         }
 
-        function fecharModal() {
-            document.getElementById('modalProduto').style.display = 'none';
+        // Menu Mobile
+        function toggleMenu() {
+            if (window.innerWidth > 900) return;
+            const nav = document.getElementById('menu-principal');
+            const btn = document.getElementById('btn-menu-toggle');
+            const aberto = nav.classList.toggle('menu-aberto');
+            btn.setAttribute('aria-expanded', aberto ? 'true' : 'false');
         }
 
-        window.onclick = function(event) {
-            let modal = document.getElementById('modalProduto');
-            if (event.target === modal) {
-                fecharModal();
+        function fecharMenuMobile() {
+            const nav = document.getElementById('menu-principal');
+            const btn = document.getElementById('btn-menu-toggle');
+            nav.classList.remove('menu-aberto');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+
+        // Fallback de light-dismiss para <dialog closedby="any"> em navegadores sem suporte nativo a closedBy
+        if (!('closedBy' in HTMLDialogElement.prototype)) {
+            const outside = (e, dialog) => {
+                const r = dialog.getBoundingClientRect();
+                return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+            };
+            for (const dialog of document.querySelectorAll('dialog[closedby="any"]')) {
+                let pressedOutside = false;
+                dialog.addEventListener('pointerdown', (e) => { pressedOutside = outside(e, dialog); });
+                dialog.addEventListener('pointerup', (e) => { if (pressedOutside && outside(e, dialog)) dialog.close(); });
             }
         }
-
-
-        // Função para abrir e fechar o Menu Hambúrguer
-        function toggleMenu() {
-            // Não faz nada se a tela for grande (PC)
-            if (window.innerWidth > 768) return; 
-            
-            const nav = document.getElementById('menu-principal');
-            nav.classList.toggle('menu-aberto');
-        }
     </script>
-    
-
 </body>
 </html>
